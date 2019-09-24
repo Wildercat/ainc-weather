@@ -5,7 +5,7 @@ var api_key = '9d9e3d0b51cb088b9905bacc4328c9c2';
 
 async function getWeather(zip) {
     // let response = await fetch ('api.openweathermap.org/data/2.5/weather?zip=' + zip + 'APPID=' + api_key)
-    let response = await fetch('http://api.openweathermap.org/data/2.5/weather?zip=' + zip + '&units=imperial&APPID=9d9e3d0b51cb088b9905bacc4328c9c2')
+    let response = await fetch('https://api.openweathermap.org/data/2.5/weather?zip=' + zip + '&units=imperial&APPID=9d9e3d0b51cb088b9905bacc4328c9c2')
     if (!response.ok) {
         alert('Please enter a valid US zip code');
         throw new Error('Network response was not ok.');
@@ -27,7 +27,7 @@ function mkCard(header, sub, body,iconURL) {
     cardTitle.textContent = header;
 
     let cardIcon = document.createElement('img');
-    cardIcon.setAttribute('src', `http://openweathermap.org/img/w/${iconURL}.png`);
+    cardIcon.setAttribute('src', `https://openweathermap.org/img/w/${iconURL}.png`);
     cardIcon.setAttribute('class', 'img-fluid');
     cardTitle.appendChild(cardIcon);
 
